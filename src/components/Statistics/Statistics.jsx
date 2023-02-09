@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 import { getRandomColor } from 'components/utils/getRandomColor';
 import css from 'components/Statistics/Statistics.module.css';
+import {Section, StatTitle, StatList} from 'components/Statistics/Statistics.styled'
 
 export const Statistics = ({ title, stats }) => {
   return (
-    <section className={css.statistics}>
-      <h2 className={css.title}>{title}</h2>
+    <Section>
+      <StatTitle>{title}</StatTitle>
 
-      <ul className={css.statList}>
+      <StatList className={css.statList}>
         {stats.map(stat => (
           <li
             key={stat.id}
@@ -20,8 +21,8 @@ export const Statistics = ({ title, stats }) => {
             <span className={css.percentage}>{stat.percentage}</span>
           </li>
         ))}
-      </ul>
-    </section>
+      </StatList>
+    </Section>
   );
 };
 
