@@ -16,7 +16,7 @@ export const Statistics = ({ title, stats }) => {
 
       <StatList>
         {stats.map(stat => (
-          <StatListItem key={stat.id} bgColor={stats}>
+          <StatListItem key={stat.id}>
             <StatListLabel>{stat.label}</StatListLabel>
             <StatListPercentage>{stat.percentage}</StatListPercentage>
           </StatListItem>

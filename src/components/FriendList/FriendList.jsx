@@ -1,33 +1,31 @@
 import PropTypes from 'prop-types';
 import { networkStatus } from 'components/utils/networkStatus';
 import { colorStatus } from 'components/utils/colorStatus';
-import css from 'components/FriendList/FriendList.module.css';
+
+import {
+  Friends,
+  FriendsItem,
+  Wrapper,
+  Avatar,
+  StatusNetwork,
+  FriendName,
+} from 'components/FriendList/FriendList.styled';
 
 export const FriendList = ({ friends }) => {
   return (
-    <ul className={css.friendList}>
+    <Friends>
       {friends.map(({ id, avatar, name, isOnline }) => (
-        <li key={id} className={css.item}>
-          <div className={css.wrapper}>
-            <img
-              className={css.avatar}
-              src={avatar}
-              alt="User avatar"
-              width="48"
-            />
-            <span
-              className={css.status}
-              style={{
-                color: colorStatus(isOnline),
-              }}
-            >
+        <FriendsItem key={id}>
+          <Wrapper>
+            <Avatar src={avatar} alt="User avatar" width="48" />
+            <StatusNetwork colorStatus={colorStatus(isOnline)}>
               {networkStatus(isOnline)}
-            </span>
-          </div>
-          <p className={css.name}>{name}</p>
-        </li>
+            </StatusNetwork>
+          </Wrapper>
+          <FriendName>{name}</FriendName>
+        </FriendsItem>
       ))}
-    </ul>
+    </Friends>
   );
 };
 
