@@ -21,7 +21,7 @@ export const TableHeaderItem = styled.th`
 `;
 
 export const TableBody = styled.tbody`
-  background-color: ##d4f8f8;
+  background-color: #ffffff;
 `;
 
 export const TableData = styled.tr`
@@ -31,17 +31,15 @@ export const TableData = styled.tr`
 `;
 
 export const TableDataItem = styled.td`
-  padding: 10px 70px 10px 70px ;
+  padding: 10px 70px 10px 70px;
   text-transform: capitalize;
   color: #656a6e;
   border-right: 1px solid #e7e7e7;
-  }
 `;
 
 export const TableDataItemCurrency = styled.td`
-  padding: 10px 70px 10px 70px ;
+  padding: 10px 70px 10px 70px;
   text-align: center;
   color: #656a6e;
   border-right: 1px solid #e7e7e7;
-  }
 `;
